@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .discount-badge-container {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .discount-badge {
+            background-color: #e53935;
+            /* Red color */
+            color: white;
+            font-weight: bold;
+            padding: 15px 20px;
+            border-radius: 15px;
+            /* Rounded corners */
+            position: relative;
+            z-index: 2;
+            transform: rotate(-5deg);
+            /* Slight rotation for visual effect */
+        }
+
+        .discount-text {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .discount-badge-container::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 100%;
+            height: 100%;
+            background-color: #ffd600;
+            /* Yellow color */
+            border-radius: 15px;
+            z-index: 1;
+            transform: rotate(5deg);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="discount-badge-container">
+        <div class="discount-badge">
+            <span class="discount-text">10%<br>OFF</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
