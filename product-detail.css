@@ -1,5 +1,4 @@
 .product-detail-border{
-    border: rgb(87, 87, 87) solid 1px;
     width: 70%;
     margin: auto;
 
@@ -7,7 +6,6 @@
     /* grid-template-columns: 1fr 2fr; */
     grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
     place-content: center;
-    /* gap: 30px; */
 }
 
 .product-detail-border{
@@ -16,48 +14,45 @@
 }
 
 .product-detail-image img{
-    width: 70%;
-
-    border: rgb(254, 254, 254) solid;
+    width: 60%;
 }
 
 .product-detail-info{
     width: 100%;
-    border: red solid;
 }
-.product-detail-info h2{
-    color: chocolate;
+.product-detail-info h1{
+    color: #E67514;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .product-detail-info i{
-    color: coral;
+    color: #b66c2c;
     margin-bottom: 20px;
 }
 
 .product-detail-price{
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .product-detail-info h3{
     margin-bottom: 10px;
-    color: chocolate;
+    color: #E67514;
 }
 
 .product-detail-desc{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .product-detail-list{
-    border: white solid;
     width: 70%;
 }
 
 .product-detail-list hr{
     border: none; height:0.5px; background-color: rgb(85, 85, 85);
     width: 100%;
-    margin: 10px 0 10px 0;
+    margin: 20px 0 20px 0;
 }
 
 .product-detail-list h3 span{
@@ -66,7 +61,7 @@
 }
 
 .product-detail-list .product-detail-qty{
-    margin: 50px 0 50px 0;
+    margin: 30px 0 50px 0;
 
     display: flex;
     justify-content: space-between;
@@ -75,19 +70,44 @@
 
 .product-detail-list .product-detail-qty input{
     padding: 10px 10px;
+    background-color: transparent;
+    border: rgb(57, 57, 57) solid 0.5px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+.product-detail-qty input:focus{
+    color: #ffffff;
+    border: rgb(57, 57, 57) solid 0.5px;
+    outline: none;
+    
 }
 
 .product-detail-list button{
-    /* padding: 10px 20px; */
-    width: 100%;
-    border: none;
-    border-radius: 20px;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
     gap: 10px;
 
+    background-color: #06923E;
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    margin-top: 20px;
+
+}
+
+.product-detail-list button:hover {
+    transition: 0.4s;
+    background-color: #E67514;
+    cursor: pointer;
+    box-shadow: #E67514 0 0 10px;
 }
 
 .product-detail-list button i{
