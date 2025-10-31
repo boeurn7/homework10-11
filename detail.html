@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- link to product detail style -->
+    <link rel="stylesheet" href="./product-detail.css">
+
+    <!-- link to navbar style -->
+    <link rel="stylesheet" href="./navbar.css">
+
+    <!-- link to icon library -->
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
+
 <body>
+    <nav class="navbar">
+        <img src="./image/Logo.png" alt="Logo">
+        <div class="navbar-list">
+            <a href=".\index.html">Home</a>
+            <a href="#">Product</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+        </div>
+
+        <a href="./frm-login.html">
+            <button class="account-register-login">
+                <i class='bxr  bx-user'></i>
+                <div class="btn-myaccount-label">
+                    <p>My Account</p>
+                    <p class="btn-myaccount-label-sub">Register or Login</p>
+                </div>
+            </button>
+        </a>
+    </nav>
     <div>
-        
+        <div class="product-detail-border">
+            <div class="product-detail-image">
+                <img src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png" alt="">
+            </div>
+            <div class="product-detail-info">
+                <h2>Product Title</h2>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <p class="product-detail-price">$33.50</p>
+                <h3>Product Description</h3>
+                <p class="product-detail-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quae
+                    quas nihil ullam mollitia officia vitae nam quod sint, fugit maiores saepe doloremque voluptatum
+                    error sunt corporis quaerat obcaecati temporibus!</p>
+                <div class="product-detail-list">
+                    <hr>
+                    <h3>Categories:
+                        <span>Woman
+                            |
+                            Man
+                            |
+                            Kids
+                            |
+                            Accessories</span>
+                    </h3>
+                    <hr>
+                    <h3>Tags:
+                        <span>Fashion
+                            |
+                            Lifestyle
+                            |
+                            Travel
+                            |
+                            Video
+                            |
+                            Audio</span>
+                    </h3>
+                    <hr>
+                    <h3>Share:</h3>
+                    <hr>
+                    <div class="product-detail-qty">
+                        <input type="number" value="1" min="1">
+                        <input type="text" placeholder="Enter Discount Code">
+                    </div>
+                    <button>
+                        <i class='bxr  bx-cart-plus'    ></i> 
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

@@ -1,3 +1,39 @@
+
+.latest-product-title{
+    display: flex; 
+    justify-content: space-between;
+    width: 70%; 
+    margin: auto;
+    place-items: center;
+    margin-bottom: 10px;
+}
+
+.latest-product-List ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    list-style: none;
+}
+
+.latest-product-List ul li:hover{
+    list-style-type: circle;
+    color: #E67514;
+}
+
+.latest-product-List ul span{
+    color: #5f5f5f;
+}
+
+.line-1{
+    border: none; height:0.5px; background-color: rgb(85, 85, 85);
+    width: 70%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+
 /* Product cart */
 .product-card-setting{
     display: flex;
