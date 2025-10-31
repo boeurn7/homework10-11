@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Account</title>
+
+    <!-- link to navbar style -->
+    <link rel="stylesheet" href="./navbar.css">
+
+
+    <!-- Link to style file -->
+    <link rel="stylesheet" href="./register-login.css">
+
+    <!-- link to icon -->
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="./image/Logo.png" alt="Logo">
+        <div class="navbar-list">
+            <a href="./index.html">Home</a>
+            <a href="">Product</a>
+            <a href="">Contact Us</a>
+            <a href="">About Us</a>
+        </div>
+
+        <button class="account-register-login">
+            <i class='bxr  bx-user'></i>
+            <div class="register-login">
+                My Account
+                <span style="display: flex; flex-direction: row; gap: 5px;"><a href="./frm-register.html">Register</a>
+                    or <a href="./frm-login.html">Login</a></span>
+            </div>
+
+        </button>
+
+    </nav>
+
+    <div class="frm-register-login">
+        <div class="container">
+            <img src="https://img.icons8.com/?size=100&id=108652&format=png&color=000000" alt="">
+            <h3>Welcome Back!!</h3>
+            <p>Please login to your account</p>
+            <form action="">
+                <div class="form-text">
+                    <label for="">Username</label>
+                    <input type="text" placeholder="Enter Username" required>
+                    <i class='bxr  bx-user'></i>
+                </div>
+                <div class="form-text">
+                    <label for="">Password</label>
+                    <input type="password" placeholder="Enter Password" required>
+                    <i class='bxr  bx-lock'></i>
+                </div>
+
+                <div class="forgot-pass">
+                    <a href="">Forgot password?</a>
+                </div>
+                <button class="btn">Login</button>
+                <p>- Or via social media -</p>
+                <div class="link-social-media">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000"
+                            alt="facebook-icon">
+                    </a>
+                    <a href="https://www.google.com/" target="_blank">
+                        <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="Google-icon">
+                    </a>
+                </div>
+
+                <div class="link-login-signup">
+                    Don't have an account? <a href="./frm-register.html">Register</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
