@@ -41,6 +41,10 @@ body {
     text-decoration: underline #E67514 4px;
 }
 
+.navbar a{
+    text-decoration: none;
+}
+
 .account-register-login{
     display: flex;
     justify-content: center;
@@ -48,9 +52,9 @@ body {
     gap: 10px;
 
     background-color: transparent;
-    border: none;
     color: #ffffff;
     cursor: pointer;
+    border: none;
 }
 
 .account-register-login i{
@@ -58,16 +62,24 @@ body {
     border: #2c2d2c solid 1px;
     border-radius: 50%;
     padding: 10px;
+    transition: transform 0.4s ease;
+    color: white;
+    text-decoration: none;
 }
 
-.account-register-login .register-login{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 5px;
+.account-register-login i:hover{
+    background-color: #E67514;
+    transform: scale(1.1);
 }
 
-.account-register-login span p{
+.btn-myaccount-label{
     text-align: start;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-myaccount-label-sub{
+    color: #6c6969;
+    font-size: 12px;
 }
