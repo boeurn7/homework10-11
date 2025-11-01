@@ -83,3 +83,18 @@ body {
     color: #6c6969;
     font-size: 12px;
 }
+
+/* footer */
+.footer{
+    margin-top: 50px;
+    text-align: center;
+}
+.footer hr{
+    border: none; height:0.5px; background-color: rgb(85, 85, 85);
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+.footer span{
+    font-size: small;
+    padding: 20px;
+}

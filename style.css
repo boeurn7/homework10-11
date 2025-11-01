@@ -20,6 +20,7 @@
 .latest-product-List ul li:hover{
     list-style-type: circle;
     color: #E67514;
+    cursor: pointer;
 }
 
 .latest-product-List ul span{
@@ -158,13 +159,4 @@
     position: absolute;
     top: 8px;
     right: 25px;
-}
-
-/* footer */
-.footer hr{
-    margin: 20px 0 20px 0;
-}
-.footer span{
-    font-size: small;
-    padding: 20px;
 }

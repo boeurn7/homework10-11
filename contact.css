@@ -1,0 +1,24 @@
+.contact-container{
+    width: 70%;
+    margin: auto;
+
+    display: grid;
+    /* grid-template-columns: 1fr 2fr; */
+    grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+    place-content: center;
+
+    border: red solid;
+}
+
+.contact-container-image{
+    position: relative;
+}
+
+.contact-container-image img{
+    height: 300px;
+    border: tan solid;
+}
+
+.contact-address{
+    position: absolute;
+}
