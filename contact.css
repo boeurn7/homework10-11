@@ -1,24 +1,129 @@
-.contact-container{
+.contact-container {
     width: 70%;
     margin: auto;
 
     display: grid;
     /* grid-template-columns: 1fr 2fr; */
-    grid-template-columns: repeat(auto-fill, minmax(500px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     place-content: center;
+    gap: 20px;
 
-    border: red solid;
+    /* border: red solid; */
 }
 
-.contact-container-image{
+.contact-container-image {
     position: relative;
+    box-shadow: #ffffff 0 0 1px;
+    border-radius: 20px;
 }
 
-.contact-container-image img{
-    height: 300px;
-    border: tan solid;
+.contact-container-image img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.3;
+
 }
 
-.contact-address{
+.contact-container h1 {
     position: absolute;
+    top: 20px;
+    margin: 20px;
+}
+
+.contact-container h2 {
+    position: absolute;
+    top: 60px;
+    margin: 20px;
+}
+
+.contact-container p {
+    position: absolute;
+    top: 140px;
+    margin: 20px;
+}
+
+.contact-address {
+    position: absolute;
+    bottom: 20px;
+    z-index: 10;
+
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 20px;
+}
+
+.contact-address a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.contact-address i {
+    color: #E67514;
+    font-size: 20px;
+    margin-right: 10px;
+    box-shadow: #E67514 0 0 1px;
+    padding: 5px;
+}
+
+.contact-form {
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 35px 10px 10px;
+    border: grey solid 1px;
+    transition: 0.3s;
+    background-color: #a3a19f6e;
+    color:#ffffff;
+    font-size: 14px;
+}
+
+.contact-form:focus{
+    border: #FD7E14 solid 1px;
+    box-shadow: 0 0  5px #FD7E14;
+    outline: none;
+}
+
+.contact-form-term{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 6px;
+    padding: 10px 35px 10px 0px;
+    transition: 0.3s;
+    color:#ffffff;
+    font-size: 14px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+
+    background-color: #06923E;
+    padding: 12px 20px;
+    font-size: 18px;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 20px;
+
+    position: sticky;
+}
+
+.btn:hover {
+    transition: 0.4s;
+    background-color: #E67514;
+    cursor: pointer;
+    box-shadow: #E67514 0 0 10px;
 }
