@@ -132,6 +132,11 @@ p {
     margin: auto;
 }
 
+.session-cate-item-border:hover{
+    box-shadow: #E67514 0 0 8px;
+    border: none;
+}
+
 .session-cate-item-border i {
     font-size: 40px;
     border-radius: 50%;
@@ -151,7 +156,7 @@ p {
 
 .session-cate-item-border i:hover {
     background-color: #E67514;
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .session-cate-item {
