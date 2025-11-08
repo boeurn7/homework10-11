@@ -1,14 +1,129 @@
+/* Start Session categories */
+.session-cate {
+    width: 70%;
+    margin: auto;
 
-.latest-product-title{
-    display: flex; 
+    overflow: hidden;
+}
+
+.session-cate h2 {
+    text-align: center;
+}
+
+.session-cate-border {
+    overflow: hidden;
+    /* border: #d82b3a solid 1px; */
+    margin: 35px 0 60px 0;
+}
+
+.session-cate-track {
+    display: flex;
+    animation: smoothSlide 20s infinite ease-in-out;
+}
+
+.session-cate-track:hover {
+    animation-play-state: paused;
+}
+
+.session-cate-card {
+    flex: 0 0 calc(100% / 6);
+    /* show 6 items */
+    text-align: center;
+    padding: 15px;
+}
+
+.session-cate-card a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.session-cate-item-border {
+    border: #454545 solid 0.5px;
+    border-radius: 50%;
+    padding: 10px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.session-cate-item {
+    border-radius: 50%;
+    padding: 30px;
+    width: 100px;
+    height: 100px;
+    color: #ffffff;
+    background-color: #282727;
+}
+
+.session-cate-item:hover {
+    background-color: #E67514;
+}
+
+.session-cate-card p {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* 🌟 Smooth sliding keyframes */
+@keyframes smoothSlide {
+
+    0%,
+    10% {
+        transform: translateX(0);
+    }
+
+    15%,
+    25% {
+        transform: translateX(-16.6%);
+    }
+
+    /* move 1 card */
+    30%,
+    40% {
+        transform: translateX(-33.2%);
+    }
+
+    /* move 2 cards */
+    45%,
+    55% {
+        transform: translateX(-49.8%);
+    }
+
+    /* move 3 cards */
+    60%,
+    70% {
+        transform: translateX(-66.4%);
+    }
+
+    /* move 4 cards */
+    75%,
+    85% {
+        transform: translateX(-83%);
+    }
+
+    /* move 5 cards */
+    90%,
+    100% {
+        transform: translateX(0);
+    }
+
+    /* back to start */
+}
+
+/* End Session categories */
+
+.latest-product-title {
+    display: flex;
     justify-content: space-between;
-    width: 70%; 
+    width: 70%;
     margin: auto;
     place-items: center;
     margin-bottom: 10px;
 }
 
-.latest-product-List ul{
+.latest-product-List ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,18 +132,20 @@
     list-style: none;
 }
 
-.latest-product-List ul li:hover{
+.latest-product-List ul li:hover {
     list-style-type: circle;
     color: #E67514;
     cursor: pointer;
 }
 
-.latest-product-List ul span{
+.latest-product-List ul span {
     color: #5f5f5f;
 }
 
-.line-1{
-    border: none; height:0.5px; background-color: rgb(85, 85, 85);
+.line-1 {
+    border: none;
+    height: 0.5px;
+    background-color: rgb(85, 85, 85);
     width: 70%;
     margin: auto;
     margin-bottom: 30px;
@@ -36,7 +153,7 @@
 
 
 /* Product cart */
-.product-card-setting{
+.product-card-setting {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,6 +183,10 @@
     object-fit: contain;
 }
 
+.product-card:hover {
+    box-shadow: #E67514 0 0 5px;
+    border: none;
+}
 
 .product-card:hover img {
     transition: 0.4s;
