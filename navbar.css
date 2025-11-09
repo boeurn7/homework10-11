@@ -55,6 +55,8 @@ body {
     color: #ffffff;
     cursor: pointer;
     border: none;
+    width: 100%;
+    line-height: 20px;  
 }
 
 .account-register-login i{
@@ -74,14 +76,16 @@ body {
 
 .btn-myaccount-label{
     text-align: start;
-    line-height: 20px;
     font-size: 14px;
     font-weight: bold;
+    width: 147px;
 }
 
 .btn-myaccount-label-sub{
     color: #6c6969;
     font-size: 12px;
+    text-align: start;
+    width: 147px;
 }
 
 /* footer */
