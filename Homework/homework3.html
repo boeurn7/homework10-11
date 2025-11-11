@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework3</title>
+    <style>
+        body{
+            font-family: "Khmer OS Battambang", Arial, Helvetica, sans-serif;
+            background-color: #f6f6f7;
+            color: #1a2039;
+        }
+        .title{
+            /* display: flex; */
+            /* justify-items: center; */
+            /* align-items: center; */
+            background-color: #b0a36e;
+            padding: 5px;
+        }
+        .title h2 {
+            text-align: center;
+            font-size: 35px;
+        }
+        .description{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .description p{
+            max-width: 80%;
+            text-align: start;
+            font-size: 20px;
+        }
+        .image{
+            display: flex;
+            justify-content: center;
+             align-items: center;
+            /* border: #1a2039 solid 2px; */
+            
+        }
+        .image img{
+            max-width: 80%;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+            /* border: #1a2039 solid; */
+            
+        }
+
+        .gallery{
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            justify-content: center;
+
+        }
+        .gallery .box{
+            width: 493px;
+            height: auto;
+            transition: transform 0.2s ease;
+
+        }
+        .gallery .box:hover {
+            transform: scale(1.1); /* Zooms to 120% */
+        }
+        .gallery .box img{
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fills the box and crops excess */
+            display: block;
+        }
+        .summary{
+            display: flex;
+            justify-content: center;
+            /* border: #b0a36e solid 2px; */
+
+        }
+        .summary .summary-des{
+            border: #1a2039 solid 1px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            width: auto;
+            font-size: 17px;
+        }
+
+        .profile{
+            display: flex;
+            /* border: #00f34d solid; */
+            gap: 15px;
+            justify-content: start;
+            background-color: #d9d8da;
+
+        }
+        .profile .profile_image{
+            flex-direction: row;
+            /* border: #1a2039 solid; */
+            width: 200px;
+            height: 200px;
+            
+            margin: 35px 0px 0px 40px;
+        }
+        .profile .profile_image img{
+	        width: 80%;
+	        border-radius: 50%;
+	        /* margin-bottom: 20pxs; */
+            /* border: rgb(139, 139, 139) solid; */
+            box-shadow: 0 4px 20px #d9d8da(255, 255, 255, 0.2);
+            background-color: #a4a5a9;
+
+            cursor: pointer;
+
+        }
+        @keyframes rotateImage {
+            0%{transform: rotateZ(0);}
+            100%{transform: rotateZ(45deg);}
+        }
+        .profile .profile_image img:hover{
+            background-color: rgb(129, 239, 230);
+            animation: rotateImage 0.5s linear infinite;
+        }
+        
+        .profile .profile_des{
+            /* border: #b0a36e solid; */
+            width: 68%;
+            /* background-color: #1a2039; */
+            color: #1a2039;
+            font-size: 19px;
+        }
+        .logo{
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            gap: 15px;
+            /* margin-top: 10px; */
+        }
+        .logo img{
+            width: 15hv;
+            height: 25px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .logo img:hover{
+            transform: scale(1.2); /* Scale up the icon */
+            opacity: 0.8; /* Reduce opacity */ 
+        }
+
+        .comment{
+            margin: 40px 0px 50px 0px;
+        }
+        .btn_comment{
+            /* Colors */
+            color: rgb(215, 15, 65); /* Sets the text color */
+
+            /* Border and Shape */
+            border: #1a2039 solid 1px; /* Removes the default border */
+            border-radius: 5px; /* Adds rounded corners */
+
+            /* Spacing and Layout */
+            padding: 3px 8px; /* Adds padding around the text */
+            display: inline-block; /* Allows width/height to be set and respects margins */
+
+            /* Typography */
+            font-family: "Khmer os",Arial, Helvetica, sans-serif;
+            font-size: 14px; /* Sets the font size */
+            font-weight: bold; /* Sets the font weight */
+
+            /* Interactivity */
+            cursor: pointer; /* Changes cursor to a pointer on hover */
+            transition: background-color 0.3s ease; /* Adds a smooth transition for hover effects */
+
+            /* Shadow */
+            /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); Adds a subtle shadow */
+        }
+
+        .btn_comment:hover {
+            background-color: #b0a36e; /* Changes background on hover */
+            color: #1a2039;
+        }
+
+        .btn_comment:active {
+            background-color: #004085; /* Changes background when clicked */
+        }
+
+    </style>
+</head>
+<body>
+        <!-- The title of paragraph -->
+        <div class="title">
+            <h2>រមណីយដ្ឋានវប្បធម៌ប្រវត្តិសាស្រ្តហ្លួងព្រះស្តេចកន</h2>
+        </div>
+        <!-- Description -->
+        <div class="description">
+            <p>
+                <a href="https://phkaslapartner.com/business-kamsan/hluang-preah-sdach-kan-cultural-and-historical-resort/" target="_blank"><b>រមណីយដ្ឋានវប្បធម៌ប្រវត្តិសាស្ត្រហ្លួងព្រះស្ដេចកន</b></a> ស្ថិតនៅ <i>ភូមិនគរក្នុង ឃុំដូនតី ស្រុកពញាក្រែក ខេត្តត្បូងឃ្មុំ</i> មានចម្ងាយ ១៦.៥គីឡូម៉ែត្រ (16.5 Km <sup>2</sup>) ពីទីរួមខេត្តត្បូងឃ្មុំ តាមផ្លូវជាតិលេខ៧។
+
+                រមណីយដ្ឋាននេះ គឺជាអតីតរាជធានីនៃអំឡុងពេលមុនអង្គរ។ វាត្រូវបានគេ ជ្រើសរើសជារាជធានីឡើងវិញនៅសតវត្សរ៍ទី១៦ ក្នុងអំឡុងរជ្ជកាលនៃហ្លួងព្រះស្តេចកន (ស្ដេចដែលមានឈ្មោះថាព្រះបាទស្រីជេដ្ឋាផងដែរ)។ បន្ទាប់មកវាត្រូវបានគេហៅថា ក្រុងស្រឡប់ពិជ័យបន្ទាយព្រៃនគរ ហើយក្រោយមកក្នុងរយៈពេលខ្លី “<span style="background-color: yellow;">បន្ទាយព្រៃនគរ</span>” រហូតដល់ឥឡូវនេះ។
+
+                រមណីយដ្ឋានហ្លួងព្រះស្ដេចកន មានកំពែងព័ទ្ធជុំវិញរាងការ៉េប្រវែង ២,៥០០ម៉ែត្រ ក្នុងមួយជ្រុងៗ។ នៅសតវត្សរ៍ទី១៦ <b>ហ្លួងព្រះស្ដេចកន</b> បានកសាងកំពែង ព្រះវិហារវត្តអារាមមួយក្នុងបន្ទាយ និងកសាងវត្តមួយ ហើយយកមាសខៅ្មសាងព្រះពុទ្ធរូបមួយអង្គមានព្រះភ្នែន ១២ធ្នាប់ កម្ពស់ ២០ធ្នាប់តម្កល់ក្នុងប្រាសាទនោះ ។
+            </p>
+        </div>
+        <!-- Image -->
+         <div class="image">
+            <img src="https://phkaslapartner.com/wp-content/uploads/2023/08/image_2023-08-16_07-53-07-edited.jpg" alt="Image_001">
+         </div>
+         <!-- image gallery -->
+         <div class="gallery">
+            <div class="box">
+                <img src="http://nokorwatnews.com/wp-content/uploads/2020/08/23281B6F-D064-4072-A031-CE06CC16A581.jpeg" alt="Gallery_1">
+            </div>
+            <div class="box">
+                <img src="http://nokorwatnews.com/wp-content/uploads/2020/08/D7B777E9-1BA4-426B-BCE9-3CEBFB8BE291.jpeg" alt="Gallery_2">
+            </div>
+            <div class="box">
+                <img src="https://phkaslapartner.com/wp-content/uploads/2023/08/image_2023-08-16_07-52-41-edited.jpg" alt="Gallery_3">
+            </div>
+         </div>
+         <a href="https://maps.app.goo.gl/kjEXce8x4mc4FnYu6" target="_blank"><h4 style="text-align: center; text-decoration: underline;">ទីតាំងលើផែនទី</h4></a>
+        
+         <div class="summary">
+            
+            <ul class="summary-des">
+                <h3>ខ្លីៗអំពីរមណីយដ្ឋាន</h3>
+                <li>📍 <b>អាសយដ្ឋាន៖</b> ស្រុកត្បូងឃ្មុំ ខេត្តត្បូងឃ្មុំ ព្រះរាជាណាចក្រកម្ពុជា</li>
+                <li>🌏 <b>ទីតាំង៖</b> ស្ថិតនៅតំបន់ប្រវត្តិសាស្ត្រខាងជើងនៃទីរួមខេត្តសួង និងជិតនឹងទន្លេមេគង្គ</li>
+                <li>🗺️ <b>កូអរដោនេ៖</b> ប្រហាក់ប្រហែល ១២.០៨៣៣° ខាងជើង, ១០៥.៥៨៣៣° ខាងកើត</li>
+                <li>⏰ <b>ម៉ោងបើកទ្វារ៖</b> ដោយជាសារមន្ទីរសាធារណៈ ព្រះលួងស្តេចកនអាចចូលទៅទស្សនា បានពេល១ថ្ងៃ</li>
+
+                <li>🎟️ <b>ថ្លៃចូលទស្សនា៖</b> ឥតគិតថ្លៃ។ អ្នកអាចបរិច្ចាគតាមចិត្ត</li>
+                <li>☀️ <b>ពេលវេលាល្អបំផុតក្នុងការទស្សនា៖</b> រដូវប្រាំង (ខែវិច្ឆិកា ដល់ ខែមេសា) មានអាកាសធាតុល្អ</li>
+                <li>🚗 <b>របៀបធ្វើដំណើរ៖</b> ប្រហែល ៣ ទៅ ៣:៥០ ម៉ោងពីរាជធានីភ្នំពេញ ឬប្រហែល ១ ម៉ោងពីកំពង់ចាម</li>
+            </ul>
+         </div>
+         </iframe>
+         <h2 style="margin: 80px 0px 0px 0px;">អត្ថបទដោយ ៖</h2>
+        <div class="profile">
+            <div class="profile_image">
+                <img src="https://static.vecteezy.com/system/resources/previews/024/558/262/non_2x/businessman-isolated-illustration-ai-generative-free-png.png">
+            </div>
+            <div class="profile_des">
+                <h3>TWO-WAY</h3>
+                <p><b>ខ្ញុំបាទឈ្មោះ <strong>បឿន</strong> មានគោលបំណងចង់ចេះសរសេរកូដនិងបង្កើតវេបសាយដោយខ្លួនឯងដែលអាចចែករំលែកចំណេះដឹង បទពិសោធន៍ និង ដំណោះស្រាយផ្សេងៗ។</b></p>
+                <p>0747474888/098746464</p>
+
+                <div class="social">
+                    <div class="logo">
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <img src="https://clipground.com/images/youtube-video-icon-png-3.png" alt="Youtube Logo">
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <img src="https://freepnglogo.com/images/all_img/facebook-logo.png" alt="facebook Logo">
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <img src="https://www.pngmart.com/files/13/Instagram-Logo-PNG-Image-1.png" alt="Instagram Logo">
+                        </a>
+                        <a href="https://web.telegram.org/ " target="_blank">
+                            <img src="https://pngimg.com/d/telegram_PNG12.png" alt="Telegram Logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+         <div class="comment">
+            <form action="">
+                <label for="comment"><b>មតិ​យោបល់:</b></label><br>
+                <textarea id="comment" name="user_comment" rows="6" cols="100" required></textarea> <br>
+                 <input type="submit" value="បញ្ចេញមតិ" class="btn_comment">
+            </form>
+        </div>
+         <footer style="text-align: center;">
+            <hr>
+            <p>&copy;2025 TWO-WAY Reserved.</p>
+         </footer>
+</body>
+</html>

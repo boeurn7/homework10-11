@@ -272,7 +272,8 @@ p {
 
 .display-product-cart {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 25px;
     place-items: center;
 
@@ -280,6 +281,7 @@ p {
     height: auto;
 
 }
+
 
 .product-card {
     max-width: 300px;
