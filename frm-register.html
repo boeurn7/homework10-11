@@ -19,15 +19,23 @@
 
 <body>
     <nav class="navbar">
-        <img src="./image/Logo.png" alt="Logo">
-        <div class="navbar-list">
-            <a href=".\index.html">Home</a>
-            <a href="#">Product</a>
-            <a href="#">Contact Us</a>
-            <a href="./frm-about.html">About Us</a>
-        </div>
+        <a href="./home.html"><img src="./image/Logo.png" alt="Logo"></a>
+        <ul class="navbar-list">
+            <li>
+                <a class="navbar-list-item" href="./home.html"><i data-lucide="house"></i> Home</a>
+            </li>
+            <li class="active-item">
+                <a class="navbar-list-item" href="./frm-product.html"><i data-lucide="store"></i> Product</a>
+            </li>
+            <li>
+                <a class="navbar-list-item" href="./frm-contact.html"><i data-lucide="square-user-round"></i>Contact</a>
+            </li>
+            <li>
+                <a class="navbar-list-item" href="./frm-about.html"><i data-lucide="file-question-mark"></i>About</a>
+            </li>
+        </ul>
 
-        <a href="./frm-login.html">
+        <a class="account" href="./frm-login.html">
             <button class="account-register-login">
                 <i class='bxr  bx-user'></i>
                 <div>
@@ -37,6 +45,7 @@
             </button>
         </a>
     </nav>
+    
     <div class="frm-register-login">
         <div class="container">
             <h3 class="signup-title">Register Account!!</h3>

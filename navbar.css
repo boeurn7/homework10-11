@@ -20,32 +20,108 @@ body {
     margin-bottom: 50px;
 
     position: sticky;
-    z-index: 100;
+    z-index: 1000;
+    width: 100%;
+    left: 0;
+    right: 0;
     top: 0;
 }
 
-.navbar img {
+.navbar a img {
     width: 80px;
     object-fit: contain;
+    transition: transform 0.4s ease;
 }
 
-.navbar .navbar-list a {
-    text-align: center;
+.navbar a img:hover{
+    transform: scale(1.1);
+}
+
+.navbar-list {
+    display: flex;
+    gap: 50px;
+}
+
+.navbar-list li {
+    list-style: none;
+}
+
+.navbar-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
-    padding: 15px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 20px;
 }
 
-.navbar .navbar-list a:hover{
-    text-decoration: underline #E67514 4px;
+.navbar-list-item:hover {
+    text-decoration: underline #E67514 3px;
 }
 
-.navbar a{
+.navbar-list-item svg {
+    display: none;
+}
+
+.account {
     text-decoration: none;
 }
 
-.account-register-login{
+@media (max-width: 768px) {
+    .navbar {
+        /* Change these properties to fix the navbar to the bottom */
+        position: fixed;
+        top: auto; /* Fixes the position relative to the viewport */
+        bottom: 0;       /* Aligns the bottom edge to the bottom of the viewport */
+        left: 0;         /* Ensures it spans the full width */
+        right: 0;        /* Ensures it spans the full width */
+        width: 100%;     /* Ensure full width coverage */
+        /* Optional: Add a background color so content below it doesn't show through */
+        z-index: 100;   /* Ensure it appears above other content */
+        margin-bottom: 0;
+    }
+
+    .navbar img {
+        display: none;
+    }
+
+    .navbar-list {
+        display: flex;
+        justify-content: space-around;
+        
+        width: 100%; /* Ensure the list uses the full width of the navbar */
+    }
+
+    .navbar-list-item{
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 14px;
+    }
+
+    .navbar-list-item:hover{
+        text-decoration: none;
+    }
+
+    .active-item{
+        color: #E67514;
+    }
+
+    .navbar-list-item svg {
+        display: flex;
+    }
+
+    .account {
+        display: none;
+    }
+}
+
+
+.account-register-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,10 +132,10 @@ body {
     cursor: pointer;
     border: none;
     width: 100%;
-    line-height: 20px;  
+    line-height: 20px;
 }
 
-.account-register-login i{
+.account-register-login i {
     font-size: 20px;
     border: #2c2d2c solid 1px;
     border-radius: 50%;
@@ -69,19 +145,19 @@ body {
     text-decoration: none;
 }
 
-.account-register-login i:hover{
+.account-register-login i:hover {
     background-color: #E67514;
     transform: scale(1.1);
 }
 
-.btn-myaccount-label{
+.btn-myaccount-label {
     text-align: start;
     font-size: 14px;
     font-weight: bold;
     width: 147px;
 }
 
-.btn-myaccount-label-sub{
+.btn-myaccount-label-sub {
     color: #6c6969;
     font-size: 12px;
     text-align: start;
@@ -89,16 +165,20 @@ body {
 }
 
 /* footer */
-.footer{
+.footer {
     margin-top: 50px;
     text-align: center;
 }
-.footer hr{
-    border: none; height:0.5px; background-color: rgb(85, 85, 85);
+
+.footer hr {
+    border: none;
+    height: 0.5px;
+    background-color: rgb(85, 85, 85);
     width: 100%;
     margin: 20px 0 20px 0;
 }
-.footer span{
+
+.footer span {
     font-size: small;
     padding: 20px;
 }
