@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework12</title>
+
+    <!-- link to product detail style -->
+    <link rel="stylesheet" href="./product-detail.css">
+
+    <!-- link to navbar style -->
+    <link rel="stylesheet" href="./navbar.css">
+
+    <!-- link to icon library -->
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="./home.html"><img src="./image/Logo.png" alt="Logo"></a>
+        <ul class="navbar-list">
+            <li>
+                <a class="navbar-list-item" href="./home.html"><i data-lucide="house"></i> Home</a>
+            </li>
+            <li class="active-item">
+                <a class="navbar-list-item" href="./frm-product.html"><i data-lucide="store"></i> Product</a>
+            </li>
+            <li>
+                <a class="navbar-list-item" href="./frm-contact.html"><i data-lucide="square-user-round"></i>Contact</a>
+            </li>
+            <li>
+                <a class="navbar-list-item" href="./frm-about.html"><i data-lucide="file-question-mark"></i>About</a>
+            </li>
+        </ul>
+
+        <a class="account" href="./frm-login.html">
+            <button class="account-register-login">
+                <i class='bxr  bx-user'></i>
+                <div>
+                    <p class="btn-myaccount-label">My Account</p>
+                    <p class="btn-myaccount-label-sub">Register or Login</p>
+                </div>
+            </button>
+        </a>
+    </nav>
+    <div>
+        <div class="product-detail-border">
+            <div class="product-detail-image">
+                <div class="product-detail-image-thumbnail">
+                    <img src="https://m.media-amazon.com/images/I/614QV7nmCgL._AC_SX679_.jpg" alt="">
+                    <img src="https://m.media-amazon.com/images/I/71Muw-OgY6L._AC_SX679_.jpg" alt="">
+                    <img src="https://m.media-amazon.com/images/I/610Fie52RdL._AC_SX679_.jpg" alt="">
+                    <img src="https://m.media-amazon.com/images/I/51e5qWOOiWL._AC_SX679_.jpg" alt="">
+                    <img src="https://m.media-amazon.com/images/I/61Y+h8LuTBL._AC_SX679_.jpg" alt="">
+                    <img src="https://m.media-amazon.com/images/I/61WQyXHSipL._AC_SX679_.jpg" alt="">
+                </div>
+                <div class="product-detail-image-main">
+                    <img src="https://m.media-amazon.com/images/I/61dBLGDb9zL._AC_SX679_.jpg" alt="">
+                </div>
+            </div>
+            <div class="product-detail-info">
+                <h1>Product Title</h1>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bxs-star'></i>
+                <i class='bxr  bx-star'></i>
+                <p class="product-detail-price">$29.95</p>
+                <h3>Product Description</h3>
+                <p class="product-detail-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quae
+                    quas nihil ullam mollitia officia vitae nam quod sint, fugit maiores saepe doloremque voluptatum
+                    error sunt corporis quaerat obcaecati temporibus!</p>
+                <div class="product-detail-list">
+                    <hr>
+                    <div class="product-detail-link">
+                        Categories:
+                        <ul class="product-detail-link-list">
+                            <li><a href="">Woman</a></li>
+                            <li>|</li>
+                            <li><a href="">Man</a></li>
+                            <li>|</li>
+                            <li><a href="">Kids</a></li>
+                            <li>|</li>
+                            <li><a href="">Accessories</a></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="product-detail-link">
+                        Tags:
+                        <ul class="product-detail-link-list">
+                            <li><a href="">Fashion</a></li>
+                            <li>|</li>
+                            <li><a href="">Lifestyle</a></li>
+                            <li>|</li>
+                            <li><a href="">Travel</a></li>
+                            <li>|</li>
+                            <li><a href="">Video</a></li>
+                            <li>|</li>
+                            <li><a href="">Audio</a></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="product-detail-social">
+                        <div class="product-detail-social-share">
+                            Share:
+                        </div>
+                        <div class="product-detail-social-icon">
+                            <i data-lucide="facebook"></i>
+                            <i data-lucide="instagram"></i>
+                            <i data-lucide="youtube"></i>
+                            <i data-lucide="twitter"></i>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="product-detail-qty">
+                        <input type="number" value=" " min="1" placeholder="Quantity">
+                        <input type="text" placeholder="Enter Discount Code">
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <button>
+                            <i data-lucide="shopping-cart"></i>
+                            Add to Cart
+                        </button>
+                        <button>
+                            <i data-lucide="handbag"></i>
+                            Buy Now
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <footer class="footer">
+        <hr>
+        <span>&copy;Copyright 2025 TWO-WAY All Rights Reserved</span>
+    </footer>
+</body>
+
+</html>
