@@ -80,6 +80,7 @@ body {
         /* Optional: Add a background color so content below it doesn't show through */
         z-index: 100;   /* Ensure it appears above other content */
         margin-bottom: 0;
+
     }
 
     .navbar img {
