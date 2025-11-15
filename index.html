@@ -49,16 +49,36 @@
 
     tr:hover {
       background-color: #f2f2f2;
+      transition: background-color 0.3s ease;
     }
 
+    /* Homework link styling with animation */
     a {
       color: #06923E;
       text-decoration: none;
       font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
     }
 
     a:hover {
-      text-decoration: underline;
+      color: #E67514;
+      transform: scale(1.05);
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background-color: #E67514;
+      transition: width 0.3s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
     }
 
     @media (max-width: 600px) {
