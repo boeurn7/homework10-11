@@ -404,6 +404,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        margin-bottom: 70px;
     }
 
     .display-product-cart {
@@ -527,7 +529,6 @@
     .discount-tag em {
         color: #ffffff;
         font-size: 15px;
-
 
         position: absolute;
         top: 8px;
