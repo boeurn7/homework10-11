@@ -53,53 +53,6 @@
 
 }
 
-@media (min-width: 1200px) {
-    .display-product-cart {
-        grid-template-columns: repeat(4, 1fr);
-        width: 80%;
-    }
-}
-
-@media (max-width: 1200px) {
-    .display-product-cart {
-        grid-template-columns: repeat(4, 1fr);
-        width: 100%;
-    }
-}
-
-@media (max-width: 992px) {
-    .display-product-cart {
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .product-list-title {
-        width: 100%;
-        background-color: #212121;
-    }
-
-    .product-list-title h2 {
-        text-align: center;
-        margin: 5px 5px;
-    }
-
-    .product-list-title hr {
-        border: none;
-        height: 0.5px;
-        background-color: #E67514;
-        /* orange line */
-
-    }
-
-    .display-product-cart {
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
-    }
-}
-
-
 .product-card {
     /* max-width: 300px; */
     width: 100%;
@@ -211,4 +164,180 @@
     position: absolute;
     top: 8px;
     right: 25px;
+}
+
+@media (min-width: 1200px) {
+    .display-product-cart {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .display-product-cart {
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .display-product-cart {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-list-title {
+        width: 100%;
+        background-color: #212121;
+    }
+
+    .product-list-title h2 {
+        text-align: center;
+        margin: 5px 5px;
+    }
+
+    .product-list-title hr {
+        border: none;
+        height: 0.5px;
+        background-color: #E67514;
+        /* orange line */
+
+    }
+
+    /* Product cart */
+    .product-card-setting {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .display-product-cart {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        place-items: center;
+
+        width: 98%;
+        height: auto;
+        margin: auto;
+    }
+
+    .product-card {
+        max-width: 300px;
+        width: 100%;
+        padding: 20px;
+        /* box-shadow: #828282 0 0 4px; */
+        border: #2c2d2c solid 1px;
+
+        border-radius: 10px;
+
+        position: relative;
+        object-fit: contain;
+    }
+
+    .product-card:hover {
+        box-shadow: #E67514 0 0 5px;
+        border: none;
+    }
+
+    .product-card:hover img {
+        transition: 0.4s;
+        transform: scale(1.05);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .price {
+        color: #E67514;
+        font-size: 22px;
+        margin-bottom: 8px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .title {
+        font-size: 16px;
+        color: #D3ECCD;
+    }
+
+    /* Button add cart */
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+
+        background-color: #06923E;
+        padding: 7px 10px;
+        font-size: 16px;
+        width: 100%;
+        border: none;
+        border-radius: 30px;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .btn:hover {
+        transition: 0.4s;
+        background-color: #E67514;
+        cursor: pointer;
+        box-shadow: #E67514 0 0 10px;
+    }
+
+    .btn svg {
+        width: 20px;
+        height: 24px;
+    }
+
+    /* Container for the discount tag */
+    .discount-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .discount-tag {
+        position: relative;
+        display: inline-block;
+        padding: 5px 35px 5px 15px;
+        background-color: #d82b3a;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        transform: rotate(10deg);
+    }
+
+    .discount-tag strong {
+        font-size: 30px;
+        line-height: 1;
+        margin-right: 10px;
+    }
+
+    .discount-tag span {
+        display: block;
+        font-size: 10px;
+        color: #ffde18;
+        transform: rotate(2deg);
+
+        position: absolute;
+        bottom: 5px;
+        right: 18px;
+    }
+
+    .discount-tag em {
+        color: #ffffff;
+        font-size: 15px;
+
+
+        position: absolute;
+        top: 8px;
+        right: 25px;
+    }
 }
