@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div lass="max-w-7xl mx-auto mt-12 px-6">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg  p-6">
+      <h3 class="text-xl font-semibold mb-6">Dashboard</h3>
+
+      <div
+        class="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900 p-20">
+        <div>
+          <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction" class="inline-flex items-center text-gray-600 bg-white border border-gray-300
+         hover:bg-gray-100 focus:ring-4 focus:ring-gray-100
+         font-medium rounded-lg text-sm px-3 py-1.5" type="button">
+            Action
+            <svg class="w-2.5 h-2.5 ms-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 4 4 4-4" />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div id="dropdownAction" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="py-1 text-sm text-gray-700">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Reward</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Promote</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Activate account</a>
+              </li>
+            </ul>
+            <div class="py-1">
+              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Delete User
+              </a>
+            </div>
+          </div>
+        </div>
+        <label for="table-search" class="sr-only">Search</label>
+        <div class="relative">
+          <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+            </svg>
+          </div>
+          <input type="text" class="block p-2 ps-10 text-sm text-gray-900 border border-gray-300
+         rounded-lg w-80 bg-gray-50
+         focus:ring-blue-500 focus:border-blue-500" placeholder="Search by title..." onkeyup="searchProducts()">
+        </div>
+      </div>
+
+      <table class="w-full text-sm text-left text-gray-500">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+          <tr>
+            <th class="px-6 py-3">ID</th>
+            <th class="px-6 py-3">Title</th>
+            <th class="px-6 py-3">Description</th>
+            <th class="px-6 py-3">Category</th>
+            <th class="px-6 py-3">Price</th>
+            <th class="px-6 py-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Product data will be populated here -->
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <nav class="flex items-center justify-between p-4" aria-label="Table navigation">
+        <span class="text-sm text-gray-500">
+          Showing <span class="font-semibold">21</span>–<span class="font-semibold">30</span>
+        </span>
+        <ul class="inline-flex items-center -space-x-px">
+          <li>
+            <button class="px-3 py-2 ml-0 leading-tight border rounded-l-lg hover:bg-gray-100">
+              Previous
+            </button>
+          </li>
+          <li>
+            <button class="px-3 py-2 border hover:bg-gray-100">
+              1
+            </button>
+          </li>
+          <li>
+            <button class="px-3 py-2 border hover:bg-gray-100">
+              2
+            </button>
+          </li>
+          <li>
+            <button class="px-3 py-2 border bg-blue-600 text-white">
+              3
+            </button>
+          </li>
+          <li>
+            <button class="px-3 py-2 border hover:bg-gray-100">
+              4
+            </button>
+          </li>
+          <li>
+            <button class="px-3 py-2 border hover:bg-gray-100">
+              5
+            </button>
+          </li>
+          <li>
+            <button class="px-3 py-2 leading-tight border rounded-r-lg hover:bg-gray-100">
+              Next
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <script>
+    const API_URL = 'https://api.escuelajs.co'; // Base API URL
+    const tableBody = document.getElementById('tableBody'); // Table body element
+
+    let currentPage = 1;
+    let totalPages = 0;
+
+    const productPagination = {
+      limit: 10,
+      offset: 0,
+    };
+
+    // Function to get total number of products
+    const getTotalProducts = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/v1/products`);
+        const products = await res.json();
+        return products.length;
+      } catch (error) {
+        console.error('Error fetching total products:', error);
+        return 0;
+      }
+    };
+
+    // Function to render pagination buttons
+    function renderPagination(totalPages) {
+      const paginationContainer = document.querySelector('nav ul');
+      paginationContainer.innerHTML = '';
+
+      // Previous button
+      const prevButton = document.createElement('li');
+      const prevBtn = document.createElement('button');
+      prevBtn.textContent = "Previous";
+      prevBtn.className = "px-3 py-2 ml-0 leading-tight border rounded-l-lg hover:bg-gray-100";
+      prevBtn.addEventListener('click', () => changePage('Previous'));
+      prevButton.appendChild(prevBtn);
+      paginationContainer.appendChild(prevButton);
+
+      // Page number buttons
+      for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = `px-3 py-2 border hover:bg-gray-100 ${i === currentPage ? 'bg-blue-600 text-white' : ''}`;
+        btn.addEventListener('click', () => changePage(i));
+        pageButton.appendChild(btn);
+        paginationContainer.appendChild(pageButton);
+      }
+
+      // Next button
+      const nextButton = document.createElement('li');
+      const nextBtn = document.createElement('button');
+      nextBtn.textContent = "Next";
+      nextBtn.className = "px-3 py-2 leading-tight border rounded-r-lg hover:bg-gray-100";
+      nextBtn.addEventListener('click', () => changePage('Next'));
+      nextButton.appendChild(nextBtn);
+      paginationContainer.appendChild(nextButton);
+    }
+
+    // Function to change page
+    function changePage(action) {
+      if (action === 'Previous' && currentPage > 1) {
+        currentPage--;
+      } else if (action === 'Next' && currentPage < totalPages) {
+        currentPage++;
+      } else if (!isNaN(action)) {
+        currentPage = action;
+      }
+      productPagination.offset = (currentPage - 1) * productPagination.limit;
+      getProducts();
+      renderPagination(totalPages);
+    }
+
+    // Pagination button event listeners
+    document.querySelectorAll('nav ul li button').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const pageNum = e.target.textContent.trim();
+
+        if (pageNum === 'Previous' && productPagination.offset > 0) {
+          productPagination.offset -= productPagination.limit;
+        } else if (pageNum === 'Next') {
+          productPagination.offset += productPagination.limit;
+        } else {
+          const page = parseInt(pageNum);
+          productPagination.offset = (page - 1) * productPagination.limit;
+        }
+        getProducts();
+      });
+    });
+
+    // Function to update pagination UI
+    function updatePaginationUI(count) {
+      const start = productPagination.offset + 1;
+      const end = productPagination.offset + count;
+      document.querySelector('nav span').innerHTML = `Showing <span class="font-semibold">${start}</span>–<span class="font-semibold">${end}</span>`;
+    }
+
+    // Initialize pagination
+    async function initPagination() {
+      const totalProducts = await getTotalProducts();
+      totalPages = Math.ceil(totalProducts / productPagination.limit);
+
+      getProducts();
+      renderPagination(totalPages);
+    }
+    initPagination();
+
+    // Function to search products
+    const searchProducts = async () => {
+      const searchInput = document.querySelector('input[placeholder="Search by title..."]');
+      const userSearch = searchInput.value.trim().toLowerCase();
+      console.log("User Search:", userSearch);
+      
+      if (!userSearch) {
+        getProducts(); // reload all products if search is empty
+        return;
+      }
+
+      try {
+        const response = await fetch(`${API_URL}/api/v1/products?title=${encodeURIComponent(userSearch)}&offset=0&limit=${productPagination.limit} `);
+        const result = await response.json();
+        console.log('Search result:', result);
+
+        renderProducts(result);
+        updatePaginationUI(result.length); // Update pagination display
+        console.log("Product length after search:", result.length);
+      } catch (error) {
+        console.error('Error during search:', error);
+      }
+    };
+
+    // Function to delete a product by ID
+    const deleteProduct = async (productId) => {
+      try {
+        const response = await fetch(`${API_URL}/api/v1/products/${productId}`, {
+          method: 'DELETE',
+        });
+        const data = await response.json();
+        // console.log('Delete response data:', data);
+
+        if (response.ok) {
+          console.log(`Product with ID ${productId} deleted successfully.`);
+        } else {
+          console.error(`Failed to delete product with ID ${productId}.`);
+        }
+        getProducts(); // Refresh the product list after deletion
+      } catch (error) {
+        console.error('Error deleting product:', error);
+      }
+    };
+
+    // Function to render product data into the table 
+    const renderProducts = (products) => {
+      tableBody.innerHTML = "";
+      products.forEach(product => {
+        tableBody.innerHTML += `
+          <tr class="bg-white border-b hover:bg-gray-50">
+          <td class="px-6 py-4">${product.id}</td>
+          <td class="px-6 py-4 font-medium text-gray-900">${product.title}</td>
+          <td class="px-6 py-4 truncate max-w-xs">${product.description}</td>
+          <td><span class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm">${product.category.name}</span></td>
+          <td class="px-6 py-4 font-bold">$${product.price}</td>
+          <td class="px-6 py-4 flex gap-2">
+            <button class="px-4 py-1 text-white bg-blue-500 hover:bg-blue-800 rounded">Edit</button>
+            <button class="px-2 py-1 text-white bg-red-500 hover:bg-red-800 rounded" onclick="deleteProduct(${product.id})">Delete</button>
+          </td>
+          </tr>
+        `;
+      });
+    };
+
+    // Function to fetch product data from API
+    async function getProducts() {
+      try {
+        const response = await fetch(`${API_URL}/api/v1/products?offset=${productPagination.offset}&limit=${productPagination.limit}`);
+        // const response = await fetch(`${API_URL}/api/v1/products?offset=0&limit=10`);
+        // console.log('Response object:', response);
+
+        const data = await response.json();
+        // console.log("Products data", JSON.stringify(data, null, 2));
+        // console.log('Products data:', data);
+
+        console.log("Product length", data.length);
+
+        renderProducts(data);
+        updatePaginationUI(data.length); // Update pagination display
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
+    }
+    getProducts();
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+
+</body>
+
+</html>

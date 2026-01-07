@@ -112,8 +112,7 @@
             <h3 class="text-lg font-semibold text-gray-700">
               Create New Product
             </h3>
-            <button onclick="closeModal()"
-              class="text-gray-400 hover:text-gray-600 hover:bg-gray-200 rounded-lg p-2">
+            <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600 hover:bg-gray-200 rounded-lg p-2">
               ✖
             </button>
           </div>
@@ -221,20 +220,43 @@
 
     // function to remove all products from local storage
     const removeFromStorage = () => {
-      localStorage.removeItem("products");
-      products = [];
+      // localStorage.removeItem("products");
+      // products = [];
+      document.cookie = "products=; expires=Thu, 25 Dec 2025 20:45:00 GMT; path=/";
       renderProduct();
     }
 
+    // function to get a specific cookie
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
     const loadFromStorage = () => {
-      const storedProducts = localStorage.getItem("products");
-      if (storedProducts) {
-        products = JSON.parse(storedProducts);
+      // const storedProducts = localStorage.getItem("products");
+      // if (storedProducts) {
+      //   products = JSON.parse(storedProducts);
+      // }
+      const productsCookie = getCookie("products");
+      if (productsCookie) {
+        products = JSON.parse(productsCookie);
       }
     }
 
     const saveToStorage = () => {
-      localStorage.setItem("products", JSON.stringify(products));
+      // localStorage.setItem("products", JSON.stringify(products));
+      document.cookie = "products=" + JSON.stringify(products) + "; path=/";
       console.log("Products saved to local storage");
     }
 
