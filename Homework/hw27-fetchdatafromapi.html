@@ -53,30 +53,33 @@
           </div>
         </div>
 
-        <!-- FILTER DROPDOWN -->
-        <div>
-          <!-- <label for="categorySelect" class="">Filter by Category:</label> -->
-          <select id="categorySelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+
+        <div class="flex gap-4">
+          <!-- FILTER DROPDOWN -->
+          <div>
+            <!-- <label for="categorySelect" class="">Filter by Category:</label> -->
+            <select id="categorySelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
            focus:ring-primary-600 focus:border-primary-600 block w-60 p-2.5 
            dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 
            dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-            <option value="all">All</option>
-          </select>
-        </div>
-
-        <label for="table-search" class="sr-only">Search</label>
-        <div class="relative">
-          <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
+              <option value="all">All</option>
+            </select>
           </div>
-          <input type="text" class="block p-3 ps-10 text-sm text-gray-900 border border-gray-300
+          <label for="table-search" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+              </svg>
+            </div>
+            <input type="text" class="block p-2.5 ps-10 text-sm text-gray-900 border border-gray-300
          rounded-lg w-80 bg-gray-50
          focus:ring-blue-500 focus:border-blue-500" placeholder="Search by title..." onkeyup="searchProducts()">
+          </div>
         </div>
+
       </div>
 
 
